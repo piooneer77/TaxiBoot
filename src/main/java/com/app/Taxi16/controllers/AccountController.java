@@ -22,7 +22,7 @@ public class AccountController {
 		return new ResponseEntity<>(accountBusiness.getAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{user}/{magic}}" , produces = {"application/json", "application/xml"})
+    @GetMapping(value = "/magic/{user}/{magic}}" , produces = {"application/json", "application/xml"})
     public ResponseEntity<Account> getAccountByMagic(@QueryParam("user") String user, @QueryParam("magic")String magic){
         return new ResponseEntity<>(accountBusiness.getAccountByMagic(user, magic), HttpStatus.OK);
     }

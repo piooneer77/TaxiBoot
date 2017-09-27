@@ -16,6 +16,8 @@ public class Driver implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    private String userName;
+    private String magic;
     private String carMake;
     private String carType;
     private String carModelYear;
@@ -27,7 +29,27 @@ public class Driver implements Serializable{
     private File driverImage;
     private File carLicenseImage;
     private LocalDate carLicenseExpiryDate;
-    private LocalDate licenseExpiryDate;   
+    private LocalDate licenseExpiryDate;
+
+    public Driver() {
+    }
+
+    public Driver(String userName, String magic, String carMake, String carType, String carModelYear, Boolean isACon, String carPlateNumber, String carPlateLetters, File licenseImage, File idImage, File driverImage, File carLicenseImage, LocalDate carLicenseExpiryDate, LocalDate licenseExpiryDate) {
+        this.userName = userName;
+        this.magic = magic;
+        this.carMake = carMake;
+        this.carType = carType;
+        this.carModelYear = carModelYear;
+        this.isACon = isACon;
+        this.carPlateNumber = carPlateNumber;
+        this.carPlateLetters = carPlateLetters;
+        this.licenseImage = licenseImage;
+        this.idImage = idImage;
+        this.driverImage = driverImage;
+        this.carLicenseImage = carLicenseImage;
+        this.carLicenseExpiryDate = carLicenseExpiryDate;
+        this.licenseExpiryDate = licenseExpiryDate;
+    }
 
     public String getCarMake() {
         return carMake;
@@ -43,6 +65,30 @@ public class Driver implements Serializable{
 
     public void setCarType(String carType) {
         this.carType = carType;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getMagic() {
+        return magic;
+    }
+
+    public void setMagic(String magic) {
+        this.magic = magic;
+    }
+
+    public Boolean getACon() {
+        return isACon;
+    }
+
+    public void setACon(Boolean ACon) {
+        isACon = ACon;
     }
 
     public String getCarModelYear() {
