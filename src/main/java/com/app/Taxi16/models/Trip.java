@@ -14,103 +14,85 @@ public class Trip implements Serializable{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
-	private int driver;
-	private int account;
-    private String source;
-    private String destination;
-    private String rateToDriver;
-    private String rateToClient;
-    private Boolean isACon;
-    
+	private int tripId;
+	private int driversId;
+	private int accountId;
+    private String tripSource;
+    private String tripDestination;
+    private String tripRateToDriver;
+    private String tripRateToClient;
+    private int tripIsACon;
+
 	public Trip() {
-		super();
 	}
 
-	
-	
-	public Trip(int driver, int account, String source, String destination, String rateToDriver, String rateToClient,
-			Boolean isACon) {
-		super();
-		this.driver = driver;
-		this.account = account;
-		this.source = source;
-		this.destination = destination;
-		this.rateToDriver = rateToDriver;
-		this.rateToClient = rateToClient;
-		this.isACon = isACon;
-	}
+    public Trip(int driversId, int accountId, String tripSource, String tripDestination, String tripRateToDriver, String tripRateToClient, int tripIsACon) {
+        this.driversId = driversId;
+        this.accountId = accountId;
+        this.tripSource = tripSource;
+        this.tripDestination = tripDestination;
+        this.tripRateToDriver = tripRateToDriver;
+        this.tripRateToClient = tripRateToClient;
+        this.tripIsACon = tripIsACon;
+    }
 
+    public int getTripId() {
+        return tripId;
+    }
 
+    public int getDriversId() {
+        return driversId;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public void setDriversId(int driversId) {
+        this.driversId = driversId;
+    }
 
-	public int getDriver() {
-		return driver;
-	}
+    public int getAccountId() {
+        return accountId;
+    }
 
-	public void setDriver(int driver) {
-		this.driver = driver;
-	}
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
+    }
 
-	public int getAccount() {
-		return account;
-	}
+    public String getTripSource() {
+        return tripSource;
+    }
 
-	public void setAccount(int account) {
-		this.account = account;
-	}
+    public void setTripSource(String tripSource) {
+        this.tripSource = tripSource;
+    }
 
-	
+    public String getTripDestination() {
+        return tripDestination;
+    }
 
-	public String getSource() {
-		return source;
-	}
+    public void setTripDestination(String tripDestination) {
+        this.tripDestination = tripDestination;
+    }
 
-	public void setSource(String source) {
-		this.source = source;
-	}
+    public String getTripRateToDriver() {
+        return tripRateToDriver;
+    }
 
-	public String getDestination() {
-		return destination;
-	}
+    public void setTripRateToDriver(String tripRateToDriver) {
+        this.tripRateToDriver = tripRateToDriver;
+    }
 
-	public void setDestination(String destination) {
-		this.destination = destination;
-	}
+    public String getTripRateToClient() {
+        return tripRateToClient;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setTripRateToClient(String tripRateToClient) {
+        this.tripRateToClient = tripRateToClient;
+    }
 
-	public String getRateToDriver() {
-		return rateToDriver;
-	}
+    public int getTripIsACon() {
+        return tripIsACon;
+    }
 
-	public void setRateToDriver(String rateToDriver) {
-		this.rateToDriver = rateToDriver;
-	}
-
-	public String getRateToClient() {
-		return rateToClient;
-	}
-
-	public void setRateToClient(String rateToClient) {
-		this.rateToClient = rateToClient;
-	}
-
-	public Boolean getIsACon() {
-		return isACon;
-	}
-
-	public void setIsACon(Boolean isACon) {
-		this.isACon = isACon;
-	}
-    
-    
-    
-    
-    
+    public void setTripIsACon(int tripIsACon) {
+        this.tripIsACon = tripIsACon;
+    }
 }

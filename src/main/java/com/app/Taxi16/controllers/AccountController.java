@@ -22,9 +22,9 @@ public class AccountController {
 		return new ResponseEntity<>(accountBusiness.getAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/magic/{user}/{magic}}" , produces = {"application/json", "application/xml"})
-    public ResponseEntity<Account> getAccountByMagic(@QueryParam("user") String user, @QueryParam("magic")String magic){
-        return new ResponseEntity<>(accountBusiness.getAccountByMagic(user, magic), HttpStatus.OK);
+    @GetMapping(value = "/magic/{email}/{magic}" , produces = {"application/json", "application/xml"})
+    public ResponseEntity<Account> getAccountByMagic(@PathVariable("email") String email, @PathVariable("magic")String magic){
+        return new ResponseEntity<>(accountBusiness.getAccountByMagic(email, magic), HttpStatus.OK);
     }
 	
 	@PostMapping(value = "/save", consumes = {"application/json", "application/xml"})

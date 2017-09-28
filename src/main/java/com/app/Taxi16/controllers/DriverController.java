@@ -22,7 +22,7 @@ public class DriverController {
     }
 
     @GetMapping(value = "/magic/{user}/{magic}}" , produces = {"application/json", "application/xml"})
-    public ResponseEntity<Driver> getAccountByMagic(@QueryParam("user") String user, @QueryParam("magic")String magic){
+    public ResponseEntity<Driver> getAccountByMagic(@PathVariable("user") String user, @PathVariable("magic")String magic){
         return new ResponseEntity<>(driverBusiness.getDriverByMagic(user, magic), HttpStatus.OK);
     }
 

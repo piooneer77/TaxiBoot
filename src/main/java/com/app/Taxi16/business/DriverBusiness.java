@@ -25,7 +25,7 @@ public class DriverBusiness {
 	}
 
 	public Driver getDriverByMagic(String user, String magic) {
-		return driverRepository.findByUserNameAndMagic(user, magic);
+		return driverRepository.findByUserAndMagic(user, magic);
 	}
 
 	public void save(Driver driver) {

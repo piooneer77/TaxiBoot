@@ -22,8 +22,8 @@ public class AccountBusiness {
 		return accountRepository.findAll();
 	}
 	
-	public Account getAccountByMagic(String user, String magic) {
-		return accountRepository.findByUserNameAndMagic(user, magic);
+	public Account getAccountByMagic(String email, String magic) {
+		return accountRepository.findAccountByEmailAndMagic(email, magic);
 	}
 	
 	public void save(Account account) {

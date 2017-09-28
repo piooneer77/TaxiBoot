@@ -2,57 +2,49 @@ package com.app.Taxi16.models;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.Null;
 
 @Entity
 @Table( name = "accounts_tbl" )
-public class Account implements Serializable{ 
+public class Account implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    private String userName;
-    private String magic;
+    private int accountId;
+    @Column(nullable = true)
     private String firstName;
+    @Column(nullable = true)
     private String lastName;
+    @Column(nullable = true)
     private String phone;
-    private String address;
-    private String city;
-    private String country;
+    @Column(nullable = true)
     private String email;
-    private LocalDate dateOfBirth;
-    private String gender;
-    private Boolean isOnTrip;    
-    private Boolean isLocked;
-    private Boolean isDeleted;
+    @Column(nullable = true)
+    private String magic;
+    @Column(nullable = true)
+    private int isOnTrip;
+    @Column(nullable = true)
+    private int isLocked;
+    @Column(nullable = true)
+    private int isDeleted;
 
-    
-    public String getUserName() {
-        return userName;
+    public Account() {
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getMagic() {
-        return magic;
-    }
-
-    public void setMagic(String magic) {
+    public Account(String firstName, String lastName, String phone, String email, String magic, int isOnTrip, int isLocked, int isDeleted) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
         this.magic = magic;
+        this.isOnTrip = isOnTrip;
+        this.isLocked = isLocked;
+        this.isDeleted = isDeleted;
     }
 
     public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        return accountId;
     }
 
     public String getFirstName() {
@@ -79,30 +71,6 @@ public class Account implements Serializable{
         this.phone = phone;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -111,46 +79,40 @@ public class Account implements Serializable{
         this.email = email;
     }
 
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
+    public String getMagic() {
+        return magic;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setMagic(String magic) {
+        this.magic = magic;
     }
 
-    public String getGender() {
-        return gender;
+    public int getAccountId() {
+        return accountId;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public Boolean getIsOnTrip() {
+    public int getIsOnTrip() {
         return isOnTrip;
     }
 
-    public void setIsOnTrip(Boolean isOnTrip) {
+    public void setIsOnTrip(int isOnTrip) {
         this.isOnTrip = isOnTrip;
     }
 
-    public Boolean getIsLocked() {
+    public int getIsLocked() {
         return isLocked;
     }
 
-    public void setIsLocked(Boolean isLocked) {
+    public void setIsLocked(int isLocked) {
         this.isLocked = isLocked;
     }
 
-    public Boolean getIsDeleted() {
+    public int getIsDeleted() {
         return isDeleted;
     }
 
-    public void setIsDeleted(Boolean isDeleted) {
+    public void setIsDeleted(int isDeleted) {
         this.isDeleted = isDeleted;
     }
-    
-    
 }
 

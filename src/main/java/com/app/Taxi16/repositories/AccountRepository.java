@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface AccountRepository extends JpaRepository<Account, Integer> {
 
-    Account findByUserNameAndMagic(String user, String magic);
+    Account findAccountByEmailAndMagic(String email, String magic);
 }
