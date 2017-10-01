@@ -13,19 +13,14 @@ import java.util.List;
 public class DriverBusiness {
 	
 	@Autowired
-	private final DriverRepository driverRepository;
-	
-	public DriverBusiness(DriverRepository driverRepository) {
-		super();
-		this.driverRepository = driverRepository;
-	}
+	private DriverRepository driverRepository;
 
 	public List<Driver> getAll() {
 		return driverRepository.findAll();
 	}
 
-	public Driver getDriverByMagic(String user, String magic) {
-		return driverRepository.findByUserAndMagic(user, magic);
+	public Driver findDriverByUserAndMagic(String user, String magic) {
+		return driverRepository.findDriverByUserAndMagic(user, magic);
 	}
 
 	public void save(Driver driver) {

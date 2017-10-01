@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import javax.ws.rs.QueryParam;
 import java.util.List;
 
 @RestController
@@ -21,9 +20,9 @@ public class DriverController {
         return new ResponseEntity<>(driverBusiness.getAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/magic/{user}/{magic}}" , produces = {"application/json", "application/xml"})
+    @GetMapping(value = "/magic/{user}/{magic}" , produces = {"application/json", "application/xml"})
     public ResponseEntity<Driver> getAccountByMagic(@PathVariable("user") String user, @PathVariable("magic")String magic){
-        return new ResponseEntity<>(driverBusiness.getDriverByMagic(user, magic), HttpStatus.OK);
+        return new ResponseEntity<>(driverBusiness.findDriverByUserAndMagic(user, magic), HttpStatus.OK);
     }
 
     @PostMapping(value = "/save", consumes = {"application/json", "application/xml"})

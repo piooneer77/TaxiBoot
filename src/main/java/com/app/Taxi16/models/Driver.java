@@ -14,6 +14,8 @@ public class Driver implements Serializable{
     private int driversId;
 	private String user;
     private String magic;
+    private String latitude;
+    private String longtitude;
     private String firstName;
     private String lastName;
     @Column(nullable = true)
@@ -44,9 +46,11 @@ public class Driver implements Serializable{
     public Driver() {
     }
 
-    public Driver(String user, String magic, String firstName, String lastName, String carMake, String carType, String carModelYear, String isACon, String carPlateNumbers, String carPlateLetters, File driversLicenseImage, File idImage, File driverImage, File carLicenseImage, LocalDate carLicenseExpiryDate, LocalDate driversLicenseExpiryDate) {
+    public Driver(String user, String magic, String latitude, String longtitude, String firstName, String lastName, String carMake, String carType, String carModelYear, String isACon, String carPlateNumbers, String carPlateLetters, File driversLicenseImage, File idImage, File driverImage, File carLicenseImage, LocalDate carLicenseExpiryDate, LocalDate driversLicenseExpiryDate) {
         this.user = user;
         this.magic = magic;
+        this.latitude = latitude;
+        this.longtitude = longtitude;
         this.firstName = firstName;
         this.lastName = lastName;
         this.carMake = carMake;
@@ -65,6 +69,22 @@ public class Driver implements Serializable{
 
     public int getDriversId() {
         return driversId;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongtitude() {
+        return longtitude;
+    }
+
+    public void setLongtitude(String longtitude) {
+        this.longtitude = longtitude;
     }
 
     public String getUser() {

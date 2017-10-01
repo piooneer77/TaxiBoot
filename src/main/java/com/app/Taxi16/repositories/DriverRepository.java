@@ -7,5 +7,5 @@ import com.app.Taxi16.models.Driver;
 
 
 public interface DriverRepository extends JpaRepository<Driver, Integer> {
-    Driver findByUserAndMagic(String user, String magic);
+    Driver findDriverByUserAndMagic(String user, String magic);
 }
